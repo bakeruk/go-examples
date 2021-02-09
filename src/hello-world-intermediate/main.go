@@ -7,6 +7,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 type HelloWorld struct {
@@ -34,6 +35,9 @@ func main() {
 	// Create channel
 	worldChan := make(chan string)
 
+	// Update the deterministic state of rand
+	rand.Seed(time.Now().UnixNano())
+
 	// Use a goroutine for each outputLength that
 	for i := 0; i < outputLength; i++ {
 		go pickRandomValue(worldChan, strs)
@@ -42,6 +46,9 @@ func main() {
 	// Comile the results of worldChan into a simple array
 	for i := range results {
 		results[i] = <-worldChan
+
+		// Output our results, line by line
+		fmt.Println(results[i])
 	}
 
 	// Closes the worldChan channel
@@ -57,5 +64,7 @@ func main() {
 */
 func pickRandomValue(worldChan chan string, strs []string) {
 	randStrIndex := rand.Intn(len(strs))
+
+	// Send the value to the channel
 	worldChan <- strs[randStrIndex]
 }
