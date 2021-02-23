@@ -1,7 +1,5 @@
-/*
-	An intermediate "Hello world" example, demonstrating Go's syntax and
-	concurrency via its async/await equivalent, channels.
-*/
+// An intermediate "Hello world" example, demonstrating Go's syntax and
+// concurrency via its async/await equivalent channels.
 package main
 
 import (
@@ -10,25 +8,23 @@ import (
 	"time"
 )
 
+// HelloWorld defines the structure of the Hello world object
 type HelloWorld struct {
-	hello string
-	world string
+	Hello string
+	World string
 }
 
-/*
-	Main
-*/
 func main() {
 	outputLength := 10
 	// Make an array with n (outputLength) indices
 	results := make([]string, outputLength)
 	// Example typed object
-	msgObj := HelloWorld{hello: "Hello", world: "world"}
+	msgObj := HelloWorld{Hello: "Hello", World: "world"}
 	// Example array
 	strs := []string{
-		fmt.Sprintf("%s %s", msgObj.hello, msgObj.world),
-		msgObj.hello,
-		msgObj.world,
+		fmt.Sprintf("%s %s", msgObj.Hello, msgObj.World),
+		msgObj.Hello,
+		msgObj.World,
 		"hElLo",
 		"WoRlD",
 	}
@@ -58,10 +54,8 @@ func main() {
 	fmt.Println(results)
 }
 
-/*
-	Picks a random value from the given strs array and sets the value to the given
-	channel.
-*/
+// Picks a random value from the given strs array and sets the value to the given
+// channel.
 func pickRandomValue(worldChan chan string, strs []string) {
 	randStrIndex := rand.Intn(len(strs))
 

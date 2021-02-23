@@ -1,8 +1,6 @@
-/*
-	A truly random integer range. Any number generated through math/rand is not
-	really random by default, as being deterministic it will always print the
-	same value each time.
-*/
+// A truly random integer range. Any number generated through math/rand is not
+// really random by default, as being deterministic it will always print the
+// same value each time.
 package main
 
 import (
@@ -11,9 +9,6 @@ import (
 	"time"
 )
 
-/*
-	Main
-*/
 func main() {
 	// Update the deterministic state of rand
 	rand.Seed(time.Now().UnixNano())
@@ -24,9 +19,7 @@ func main() {
 	fmt.Println(randomInt)
 }
 
-/*
-	Picks a random integer between the given min/max range
-*/
+// Picks a random integer between the given min/max range
 func randomRangedInt(min int, max int) int {
 	return min + rand.Intn(max-min)
 }

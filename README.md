@@ -7,6 +7,7 @@
 - [Getting started](#getting-started)
 - [Hello world](#hello-world)
 - [Hello world (intermediate)](#hello-world-intermediate)
+- [Object orientated](#object-orientated)
 - [Random integer range](#random-integer-range)
 
 ## Getting started
@@ -22,6 +23,10 @@ Run the files using `go run <file_path>`.
 ## Hello world (intermediate)
 
 `hello-world-intermediate` is an intermediate "Hello world" example, demonstrating Go's syntax and concurrency via its async/await equivalent, channels.
+
+## Object orientated
+
+`object-oriented` generates a cat object using OOP equivalent methodology.
 
 ## Random integer range
 

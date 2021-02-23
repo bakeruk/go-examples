@@ -1,6 +1,4 @@
-/*
-	A simple "Hello world" example.
-*/
+// A simple "Hello world" example.
 package main
 
 import (
